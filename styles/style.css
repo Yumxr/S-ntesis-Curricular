@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/* VARIABLES GLOBALES */
+:root {
+    --color-primaria: #030f2c;    /* Azul oscuro principal */
+    --color-secundaria: #ffffff;   /* Blanco */
+    --color-terciaria: #d7021b;    /* Rojo corporativo */
+    --color-hover: #f4001d;        /* Rojo más claro para efectos hover */
+    --fuente-krona: 'Krona One', sans-serif;       /* Para títulos */
+    --fuente-montserrat: 'Montserrat', sans-serif; /* Para texto normal */
+}
+
+/* RESET BASE */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO PATRON CON GRADIENTES */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    --s: 200px;
+    --c1: var(--color-primaria);
+    --c2: #152243;
+    --c3: #2f3e69;
+    background: 
+        repeating-conic-gradient(
+            from 30deg,
+            #0000 0 120deg,
+            var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+        repeating-conic-gradient(
+            from 30deg,
+            var(--c1) 0 60deg,
+            var(--c2) 0 120deg,
+            var(--c3) 0 180deg
+        );
+    background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+/* ESTILOS BASE */
+body {
+    color: var(--color-secundaria);
+    font-family: var(--fuente-montserrat);
+    line-height: 1.6;
+}
+
+/* HEADER - ALINEACIÓN IZQUIERDA COMPLETA */
+.header {
+    padding: 1rem 0 0.5rem 15%;
+    margin: 0;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-terciaria);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.header__menu__link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* RADIO BUTTONS ALINEADOS */
+.radio-inputs {
+    margin: 0.5rem 0 0 0;
+    background-color: var(--color-secundaria);
+    border: 2px solid var(--color-primaria);
+    border-radius: 10px;
+    padding: 0.3rem;
+    display: flex;
+    width: fit-content;
+}
+
+.radio-inputs .radio {
+    flex: 1;
+    min-width: 0;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    color: var(--color-primaria);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.radio-inputs .radio input:checked + .name {
+    background-color: var(--color-primaria);
+    color: var(--color-secundaria);
+    font-weight: 600;
+}
+
+/* CONTENIDO PRINCIPAL */
+.presentacion {
+    display: flex;
+    align-items: flex-start; /* Alineación superior */
+    padding: 0 50px;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    text-align: left;
+    gap: 80px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.presentacion__contenido {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineación izquierda */
+    text-align: left; /* Texto alineado izquierda */
+    gap: 1.5rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.presentacion__contenido__titulo {
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    text-align: left; 
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.titulo-destaque {
+    color: var(--color-terciaria);
+}
+
+.presentacion__contenido__texto {
+    font-size: 1.25rem;
+    font-family: var(--fuente-montserrat);
+    line-height: 1.7;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+    flex: 1;
+    max-width: 500px;
+}
+
+.presentacion__enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado horizontal */
+    gap: 1rem;
+    width: 100%;
+    margin: 2rem 0; /* Espaciado vertical */
+    text-align: center; /* Texto centrado */
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-krona);
+    font-weight: 400;
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+}
+
+.presentacion__enlaces__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    border: 2px solid var(--color-terciaria); /* Borde rojo */
+    width: 60%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--color-secundaria); /* Texto blanco */
+    transition: all 0.3s ease;
+    background-color: transparent; /* Fondo transparente */
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-3px);
+}
+
+/* Modificaciones para centrar la imagen, agregar marco y reducir tamaño */
+
+/* Modificaciones para centrar la imagen, redimensionar y agregar marco */
+
+/* Modificaciones para centrar la imagen, redimensionar y agregar marco */
+
+.presentacion__imagen {
+    /* Redimensionar la imagen */
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    
+    /* Centrar la imagen */
+    display: block;
+    margin: 0 auto;
+    flex-shrink: 0;
+    
+    /* Marco elegante */
+    border: 4px solid #030f2c;
+    border-radius: 15px;
+    box-shadow: 
+        0 0 0 6px rgba(255, 255, 255, 0.1),
+        0 0 0 10px #2c3e50,
+        0 10px 20px rgba(0, 0, 0, 0.3);
+    
+    /* Efecto hover opcional */
+    transition: all 0.3s ease;
+}
+
+
+
+/* FOOTER */
+.footer {
+    color: var(--color-primaria);
+    background-color: var(--color-terciaria);
+    padding: 1.5rem;
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.1rem;
+    font-weight: 400;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+    .header, .presentacion {
+        padding: 0 10% 2rem;
+
+    }
+    
+    .header__menu {
+        gap: 2rem;
+    }
+    
+    .presentacion {
+        flex-direction: column-reverse;
+        padding-top: 2rem;
+        gap: 2rem;
+    }
+    
+    .presentacion__contenido {
+        width: 100%;
+    }
+    
+    .presentacion__imagen {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    .presentacion__enlaces__link {
+        width: 80%;
+    }
+    .footer {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header, .presentacion {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .header__menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .header__menu__link {
+        font-size: 1rem;
+    }
+    
+    .presentacion__contenido__titulo {
+        font-size: 1.8rem;
+    }
+    
+    .presentacion__contenido__texto {
+        font-size: 1.1rem;
+    }
+    
+    .presentacion__imagen {
+        width: 90%;
+    }
+    
+    .presentacion__enlaces__link {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
