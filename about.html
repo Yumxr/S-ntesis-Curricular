@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- Estilos adicionales para la tarjeta CV -->
+    <style>
+        .cv-card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .cv-card {
+            position: relative;
+            duration: 500ms;
+            transition: transform 0.5s ease;
+            transform: rotate3d(1, -1, 1, 60deg);
+            border: 4px solid #ffffff;
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 384px;
+            width: 256px;
+            background-color: transparent;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .cv-card:hover {
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+        
+        .cv-card-header {
+            color: #f9fafb;
+        }
+        
+        .cv-card-header span {
+            font-weight: bold;
+            font-size: 3rem;
+        }
+        
+        .cv-card-header p {
+            font-size: 0.75rem;
+        }
+        
+        .cv-download-btn {
+            transition: all 0.3s ease;
+            border: 1px solid;
+            background-color: #ffffff;
+            font-weight: 600;
+            color: #030f2c;
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .cv-download-btn:hover {
+            background-color: #030f2c;
+            color: #f9fafb;
+        }
+        
+        .cv-download-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: currentColor;
+        }
+        
+        .cv-card-bg-icon {
+            position: absolute;
+            bottom: -0.125rem;
+            right: -5rem;
+            width: 12rem;
+            height: 12rem;
+            z-index: 10;
+            margin: -0.5rem;
+            fill: #f9fafb;
+            stroke: #2f3e69;
+            transition: transform 0.5s ease;
+        }
+        
+        .cv-card:hover .cv-card-bg-icon {
+            transform: scale(1.25);
+        }
+        
+        .cv-card-bg-icon-2 {
+            position: absolute;
+            bottom: -0.125rem;
+            right: -5rem;
+            width: 12rem;
+            height: 12rem;
+            z-index: 10;
+            margin: -0.5rem;
+            fill: #f9fafb;
+            stroke: #152243;
+            stroke-width: 2;
+            transition: transform 0.2s ease;
+        }
+        
+        .cv-card:hover .cv-card-bg-icon-2 {
+            transform: scale(1.25);
+        }
+        
+        /* Responsive para la tarjeta */
+        @media (max-width: 768px) {
+            .cv-card {
+                width: 200px;
+                height: 300px;
+                padding: 1rem;
+            }
+            
+            .cv-card-header span {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header class="header">
+        <nav class="header__menu">
+            <a class="header__menu__link" href="index.html">Home</a>
+            <a class="header__menu__link" href="about.html">Sobre mí</a>
+        </nav>
+    </header>
+    <main class="presentacion">
+            <section class="presentacion__contenido">
+                 <h1 class="presentacion__contenido__titulo">Sobre mí</h1>
+                 <p class="presentacion__contenido__texto">
+                        <strong class="titulo-destaque">
+                        Soy un Ingeniero de Sistemas proactivo con experiencia en soporte técnico, administración de TI y gestión de infraestructura tecnológica.
+                        </strong>
+                        Mi objetivo es aplicar mis habilidades en Python, redes LAN/WAN y bases de datos para contribuir a roles que busquen la innovación. Cuento con un título de Ingeniero de Sistemas y he complementado mis conocimientos con cursos en Python y Aprendizaje Automático.
+    </p>
+    <p class="presentacion__contenido__texto">
+        He trabajado como Analista de Sistemas y Pasante en Infraestructura Tecnológica, y actualmente me desempeño como <strong class="titulo-destaque">Profesor de Redes Informáticas en la UNEFA.</strong>
+        Adicionalmente, he realizado trabajos como freelance, incluyendo la instalación y optimización SEO de WordPress. Mis puntos fuertes son la gestión del tiempo, el pensamiento crítico, el trabajo en equipo y la adaptabilidad.
+    </p>
+            </section>
+        
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <img class="presentacion__imagen__animada" >
+            
+            <!-- Tarjeta CV -->
+            <div class="cv-card-container">
+                <div class="cv-card">
+                    <div class="cv-card-header">
+                        <span>CV</span>
+                        <p>Ingeniero de Sistemas</p>
+                    </div>
+                    <a href="./assets/edu.pdf" download class="cv-download-btn">
+                        Descargar CV 
+                        <svg class="cv-download-icon" height="100" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.1,77.9a4,4,0,0,1,4-4H73.9a4,4,0,0,1,0,8H26.1A4,4,0,0,1,22.1,77.9ZM35.2,47.2a4,4,0,0,1,5.7,0L46,52.3V22.1a4,4,0,1,1,8,0V52.3l5.1-5.1a4,4,0,0,1,5.7,0,4,4,0,0,1,0,5.6l-12,12a3.9,3.9,0,0,1-5.6,0l-12-12A4,4,0,0,1,35.2,47.2Z" fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <svg class="cv-card-bg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                        <path data-name="layer1" d="M 50.4 51 C 40.5 49.1 40 46 40 44 v -1.2 a 18.9 18.9 0 0 0 5.7 -8.8 h 0.1 c 3 0 3.8 -6.3 3.8 -7.3 s 0.1 -4.7 -3 -4.7 C 53 4 30 0 22.3 6 c -5.4 0 -5.9 8 -3.9 16 c -3.1 0 -3 3.8 -3 4.7 s 0.7 7.3 3.8 7.3 c 1 3.6 2.3 6.9 4.7 9 v 1.2 c 0 2 0.5 5 -9.5 6.8 S 2 62 2 62 h 60 a 14.6 14.6 0 0 0 -11.6 -11 z" stroke-miterlimit="10" stroke-width="5"></path>
+                    </svg>
+                    <svg class="cv-card-bg-icon-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                        <path data-name="layer1" d="M 50.4 51 C 40.5 49.1 40 46 40 44 v -1.2 a 18.9 18.9 0 0 0 5.7 -8.8 h 0.1 c 3 0 3.8 -6.3 3.8 -7.3 s 0.1 -4.7 -3 -4.7 C 53 4 30 0 22.3 6 c -5.4 0 -5.9 8 -3.9 16 c -3.1 0 -3 3.8 -3 4.7 s 0.7 7.3 3.8 7.3 c 1 3.6 2.3 6.9 4.7 9 v 1.2 c 0 2 0.5 5 -9.5 6.8 S 2 62 2 62 h 60 a 14.6 14.6 0 0 0 -11.6 -11 z" stroke-miterlimit="10" stroke-width="2"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer class="footer">
+        <p>Desarrollado por Eduardo Yumar</p>
+    </footer>
+    </div>
+</body>
+</html>
